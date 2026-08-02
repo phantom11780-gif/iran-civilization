@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ایران‌نامه | تاریخ ایران</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Vazirmatn',sans-serif;
+    background:#0b0b0b;
+    color:#eee;
+    line-height:2;
+}
+
+header{
+    height:100vh;
+    background:
+    linear-gradient(#0009,#000),
+    url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Persepolis_Persia.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:70px;
+    color:#d4af37;
+    text-shadow:0 0 20px #000;
+}
+
+.hero p{
+    font-size:25px;
+    margin:20px;
+}
+
+button{
+    background:#d4af37;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+section{
+    padding:70px 10%;
+}
+
+
+.title{
+    text-align:center;
+    color:#d4af37;
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+
+.search{
+    display:block;
+    margin:20px auto;
+    width:80%;
+    padding:15px;
+    border-radius:20px;
+    border:none;
+    font-size:18px;
+}
+
+
+.timeline{
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    right:50%;
+    width:4px;
+    height:100%;
+    background:#d4af37;
+}
+
+
+.card{
+    background:#161616;
+    margin:40px 0;
+    padding:30px;
+    border-radius:20px;
+    width:45%;
+    box-shadow:0 0 25px #000;
+    transition:.5s;
+}
+
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+
+.right{
+    margin-right:55%;
+}
+
+.left{
+    margin-left:55%;
+}
+
+
+.card h2{
+    color:#d4af37;
+}
+
+
+.king{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+
+.king div{
+    background:#171717;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+}
+
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+
+.fade{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:none;
+}
+
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:40px;
+}
+
+.timeline::before{
+right:10px;
+}
+
+.card{
+width:90%;
+margin-right:30px;
+margin-left:0;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="hero">
+
+<h1>ایران‌نامه</h1>
+
+<p>
+سفر در ۲۵۰۰ سال تاریخ ایران
+از کوروش بزرگ تا پهلوی
+</p>
+
+<button onclick="scrollDown()">
+شروع سفر تاریخی
+</button>
+
+</div>
+
+</header>
+
+
+
+<section id="history">
+
+
+<h1 class="title">
+خط زمانی ایران
+</h1>
+
+
+<input 
+class="search"
+id="search"
+placeholder="جستجوی سلسله..."
+>
+
+
+<div class="timeline">
+
+
+<div class="card right fade">
+<h2>هخامنشیان (۵۵۰ تا ۳۳۰ پیش از میلاد)</h2>
+
+<p>
+بزرگ‌ترین امپراتوری جهان باستان.
+کوروش بزرگ بنیان‌گذار این سلسله بود.
+داریوش بزرگ نظام اداری، جاده شاهی و تخت جمشید را توسعه داد.
+</p>
+
+</div>
+
+
+
+<div class="card left fade">
+
+<h2>اشکانیان (۲۴۷ پ.م تا ۲۲۴ میلادی)</h2>
+
+<p>
+حکومت قدرتمند ایرانی که قرن‌ها در برابر روم ایستادگی کرد.
+سواره‌نظام پارتی شهرت جهانی داشت.
+</p>
+
+</div>
+
+
+
+<div class="card right fade">
+
+<h2>ساسانیان (۲۲۴ تا ۶۵۱ میلادی)</h2>
+
+<p>
+آخرین شاهنشاهی ایران پیش از اسلام.
+دوره شکوفایی هنر، دانش و معماری ایرانی.
+</p>
+
+</div>
+
+
+
+<div class="card left fade">
+
+<h2>صفویه (۱۵۰۱ تا ۱۷۳۶)</h2>
+
+<p>
+تشکیل حکومت قدرتمند مرکزی.
+شاه عباس بزرگ اصفهان را به یکی از زیباترین شهرهای جهان تبدیل کرد.
+</p>
+
+</div>
+
+
+
+<div class="card right fade">
+
+<h2>افشاریه و زندیه</h2>
+
+<p>
+دوره نادرشاه افشار و سپس حکومت کریم‌خان زند.
+</p>
+
+</div>
+
+
+
+<div class="card left fade">
+
+<h2>قاجار (۱۷۹۷ تا ۱۹۲۵)</h2>
+
+<p>
+دوره‌ای همراه با تحولات سیاسی، جنگ‌های خارجی و انقلاب مشروطه.
+</p>
+
+</div>
+
+
+
+<div class="card right fade">
+
+<h2>پهلوی (۱۹۲۵ تا ۱۹۷۹)</h2>
+
+<p>
+دوره مدرن‌سازی ایران، توسعه زیرساخت‌ها و تحولات اجتماعی گسترده.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section>
+
+<h1 class="title">
+چهره‌های مهم تاریخ ایران
+</h1>
+
+
+<div class="king">
+
+
+<div>
+<h2>کوروش بزرگ</h2>
+<p>بنیان‌گذار هخامنشیان</p>
+</div>
+
+
+<div>
+<h2>داریوش بزرگ</h2>
+<p>سازنده تخت جمشید و اصلاح‌گر حکومت</p>
+</div>
+
+
+<div>
+<h2>خسرو انوشیروان</h2>
+<p>شاه بزرگ ساسانی</p>
+</div>
+
+
+<div>
+<h2>شاه عباس</h2>
+<p>معمار عصر طلایی صفویه</p>
+</div>
+
+
+<div>
+<h2>نادرشاه</h2>
+<p>فرمانده بزرگ افشاری</p>
+</div>
+
+
+<div>
+<h2>رضاشاه</h2>
+<p>بنیان‌گذار سلسله پهلوی</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+ایران‌نامه © ۱۴۰۵  
+<br>
+تاریخ ایران از باستان تا معاصر
+
+</footer>
+
+
+
+<script>
+
+
+function scrollDown(){
+
+document.getElementById("history")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+
+const cards=document.querySelectorAll(".fade");
+
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+let pos=card.getBoundingClientRect().top;
+
+if(pos < window.innerHeight-100){
+
+card.classList.add("show");
+
+}
+
+});
+
+});
+
+
+
+document.getElementById("search")
+.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+
+if(card.innerText.toLowerCase().includes(value)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+  </html>
