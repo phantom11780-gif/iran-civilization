@@ -246,3 +246,15 @@ color:#111;
 background:#ddd;
 
 } 
+document.querySelectorAll("img").forEach(img=>{
+
+
+img.onerror=function(){
+
+this.src=
+"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/640px-Placeholder_view_vector.svg.png";
+
+};
+
+
+});
