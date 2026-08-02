@@ -357,3 +357,40 @@ display:block;
 
 
   }
+.gallery div{
+
+overflow:hidden;
+position:relative;
+
+}
+
+
+.gallery img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+
+.gallery h3{
+
+position:absolute;
+
+bottom:10px;
+
+right:10px;
+
+background:#000b;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+color:#d4af37;
+
+} 
