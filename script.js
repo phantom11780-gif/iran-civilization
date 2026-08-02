@@ -1,59 +1,28 @@
-// شروع سفر تاریخی
-function start(){
+// رفتن به گاه‌شمار
 
-    document
-    .getElementById("eras")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+function goTimeline(){
 
-}
-
-
-
-// انیمیشن ظاهر شدن بخش‌ها
-
-const elements = document.querySelectorAll(
-".card, .kings div, .gallery div"
-);
-
-
-function reveal(){
-
-    elements.forEach(item=>{
-
-        let position =
-        item.getBoundingClientRect().top;
-
-
-        if(position <
-        window.innerHeight - 100){
-
-            item.style.opacity="1";
-
-            item.style.transform=
-            "translateY(0)";
-
-        }
-
-    });
+document
+.getElementById("timeline")
+.scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
 
 
-window.addEventListener(
-"scroll",
-reveal
+// انیمیشن هنگام اسکرول
+
+
+const items =
+document.querySelectorAll(
+".card, .time div, .gallery div"
 );
 
 
 
-window.addEventListener(
-"load",
-()=>{
-
-elements.forEach(item=>{
+items.forEach(item=>{
 
 item.style.opacity="0";
 
@@ -66,25 +35,214 @@ item.style.transition=
 });
 
 
-reveal();
+
+
+function showItems(){
+
+items.forEach(item=>{
+
+
+let top =
+item.getBoundingClientRect().top;
+
+
+
+if(top <
+window.innerHeight - 100){
+
+
+item.style.opacity="1";
+
+item.style.transform=
+"translateY(0)";
+
+
+}
+
+
+});
+
+
+}
+
+
+
+window.addEventListener(
+"scroll",
+showItems
+);
+
+
+window.addEventListener(
+"load",
+showItems
+);
+
+
+
+
+
+// حالت شب و روز
+
+
+let modeButton =
+document.createElement("button");
+
+
+modeButton.innerHTML=
+"☀️ تغییر حالت";
+
+
+
+modeButton.style.position=
+"fixed";
+
+
+modeButton.style.left=
+"20px";
+
+
+modeButton.style.bottom=
+"20px";
+
+
+modeButton.style.zIndex=
+"999";
+
+
+
+document.body.appendChild(
+modeButton
+);
+
+
+
+modeButton.onclick=function(){
+
+
+document.body.classList.toggle(
+"light"
+);
+
+
+};
+
+
+
+
+
+
+// جستجوی ساده تاریخی
+
+
+let search =
+document.createElement("input");
+
+
+
+search.placeholder=
+"🔎 جستجو در تاریخ ایران";
+
+
+
+search.style.position=
+"fixed";
+
+search.style.top="20px";
+
+search.style.left="20px";
+
+search.style.padding="10px";
+
+search.style.borderRadius="20px";
+
+search.style.zIndex="999";
+
+
+
+document.body.appendChild(search);
+
+
+
+
+search.addEventListener(
+"keyup",
+()=>{
+
+
+let value =
+search.value.toLowerCase();
+
+
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+
+if(
+card.innerText
+.toLowerCase()
+.includes(value)
+)
+
+{
+
+card.style.display="block";
+
+}
+
+else{
+
+card.style.display="none";
+
+}
+
+
+});
+
 
 });
 
 
 
 
-// ساعت تاریخی کوچک
 
-const footer =
+// سال خودکار فوتر
+
+
+let footer =
 document.querySelector("footer");
-
-
-let year =
-new Date().getFullYear();
 
 
 footer.innerHTML +=
 `
 <br>
-نسخه آنلاین - ${year}
+نسخه هوشمند ایران تمدن - 
+${new Date().getFullYear()}
 `;
+.light{
+
+background:#eee;
+
+color:#111;
+
+}
+
+
+.light .card,
+.light .time div,
+.light .gallery div{
+
+background:white;
+
+color:#111;
+
+}
+
+
+.light footer{
+
+background:#ddd;
+
+} 
